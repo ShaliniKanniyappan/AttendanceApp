@@ -233,7 +233,24 @@ values
   {
     echo("<br>duplicate entry");
   }
-  
+  $c="insert into course_allotment
+  (faculty_id,course_id,session_id)
+  values
+  (1,1,1),
+  (2,2,1),
+  (3,3,1),
+  (4,4,1),
+  (5,5,1),
+  (6,6,1)";
+  $s=$dbo->conn->prepare($c);
+  try{
+    $s->execute();
+  }
+  catch(PDOException $o)
+  {
+    echo("<br>duplicate entry");
+  }
+
   //if any record already there in the table delete them
   clearTable($dbo,"course_registration");
   $c="insert into course_registration
@@ -241,75 +258,16 @@ values
   values
   (:sid,:cid,:sessid)";
   $s=$dbo->conn->prepare($c);
-  //iterate over all the 24 students
-  //for each of them chose max 3 random courses, from 1 to 6
+  //iterate over all the 33 students
+  for ($i = 1; $i <= 33; $i++) {
+    for ($j = 1; $j <= 6; $j++) { 
 
-  for($i=1;$i<=24;$i++)
-  {
-    for($j=0;$j<3;$j++)
-    {
-        $cid=rand(1,6);
-        //insert the selected course into course_registration table for 
-        //session 1 and student_id $i
-        try{
-           $s->execute([":sid"=>$i,":cid"=>$cid,":sessid"=>1]); 
-        }
-        catch(PDOException $pe)
-        {
-
-        }
-
-        //repeat for session 2
-        $cid=rand(1,6);
-        //insert the selected course into course_registration table for 
-        //session 2 and student_id $i
-        try{
-           $s->execute([":sid"=>$i,":cid"=>$cid,":sessid"=>2]); 
-        }
-        catch(PDOException $pe)
-        {
-
+        // Insert the selected course into the course_registration table for session 2
+        try {
+            $s->execute([":sid" => $i, ":cid" => $j, ":sessid" => 1]);
+        } catch (PDOException $pe) {
+            // Handle exceptions if necessary
         }
     }
-  }
-
-
-  //if any record already there in the table delete them
-  clearTable($dbo,"course_allotment");
-  $c="insert into course_allotment
-  (faculty_id,course_id,session_id)
-  values
-  (:fid,:cid,:sessid)";
-  $s=$dbo->conn->prepare($c);
-  //iterate over all the 6 teachers
-  //for each of them chose max 2 random courses, from 1 to 6
-
-  for($i=1;$i<=6;$i++)
-  {
-    for($j=0;$j<2;$j++)
-    {
-        $cid=rand(1,6);
-        //insert the selected course into course_allotment table for 
-        //session 1 and fac_id $i
-        try{
-           $s->execute([":fid"=>$i,":cid"=>$cid,":sessid"=>1]); 
-        }
-        catch(PDOException $pe)
-        {
-
-        }
-
-        //repeat for session 2
-        $cid=rand(1,6);
-        //insert the selected course into course_allotment table for 
-        //session 2 and student_id $i
-        try{
-           $s->execute([":fid"=>$i,":cid"=>$cid,":sessid"=>2]); 
-        }
-        catch(PDOException $pe)
-        {
-
-        }
-    }
-  }
+}
 ?>

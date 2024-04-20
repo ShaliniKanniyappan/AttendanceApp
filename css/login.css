@@ -7,7 +7,7 @@
 
 body{
     height:100vh;
-    background-color: rgb(119, 203, 227);
+    background-color: rgb(89, 209, 230);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,17 +29,17 @@ body{
 }
 
 .loginform:hover{
-    box-shadow: 0 0 100px 0px rgb(18, 119, 178),0 0 400px 10px rgb(102, 216, 236);
+    box-shadow: 0 0 100px 0px rgb(60, 28, 219),0 0 400px 10px rgb(60, 28, 219);
     animation: blink 1s infinite;
-    background-color: rgb(109, 202, 221);
+    background-color: rgb(92, 206, 229);
 }
 @keyframes blink {
     0%,100%{
-        box-shadow: 0 0 100px 0px rgb(240, 104, 222),0 0 400px 10px  rgb(240, 104, 222);
+        box-shadow: 0 0 100px 0px rgb(60, 28, 219),0 0 400px 10px rgb(60, 28, 219);
     }
     40%,50%,60%
     {
-        box-shadow: 0 0 50px 0px  rgb(240, 104, 222),0 0 100px 0px rgb(240, 104, 222);
+        box-shadow: 0 0 50px 0px rgb(60, 28, 219),0 0 100px 0px rgb(60, 28, 219);
     }
 }
 
@@ -60,7 +60,7 @@ body{
     border-left:none;
     border-right:none;
     border-top:none;
-    border-bottom:solid 1px rgb(212, 83, 158);
+    border-bottom:solid 1px blueviolet;
     color:white;
     font-size: 20px;
     transition: all 200ms;
@@ -70,7 +70,7 @@ body{
 {
     position:absolute;
     transition: all 200ms;
-    color:rgb(193, 76, 158);
+    color:blueviolet;
 }
 
 .inputgroup input:hover +label,
@@ -120,7 +120,7 @@ body{
 }
 .inactivecolor
 {
-    background-color: rgb(206, 69, 176);
+    background-color: blue;
 }
 .activecolor
 {
