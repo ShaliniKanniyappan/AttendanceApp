@@ -28,7 +28,7 @@
     </div>
     <div class="lockscreen" id="lockscreen">
        <div class="spinner" id="spinner"></div>
-         <lable class="lblwait topmargin" id="lblwait">PLEASE WAIT</lable>
+         <lable class="lblwait topmargin" id="lblwait">PLEASE WAIT....</lable>
     </div>
 
          <script src="js/jquery.js"></script>
