@@ -39,7 +39,6 @@ The **Attendance Management System** is a web-based application designed to stre
 1. **📥 Clone the Repository**:
    ```sh
    git clone https://github.com/ShaliniKanniyappan/AttendanceApp.git
-   cd attendance-app
    ```
 2. **🛠️ Install XAMPP and Start Services**:
    - Download and install [XAMPP](https://www.apachefriends.org/download.html) 🌍
