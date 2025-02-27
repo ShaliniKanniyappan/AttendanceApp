@@ -68,13 +68,3 @@ The **Attendance Management System** is a web-based application designed to stre
 - **📝 Mark Attendance:** Select a subject and mark students as present or absent.
 - **📊 View Reports:** Generate attendance reports for analysis.
 
-## 🔮 Future Enhancements
-- 🔄 Integration of biometric or RFID technology
-- 📱 Mobile application development for easy access
-- 🧠 AI-based predictive attendance analysis
-
-## 👥 Contributors
-- **Shalini K** (University College of Engineering Arni, Anna University) 🎓
-
-## 📜 License
-This project is open-source and available under the [MIT License](LICENSE). ✅
